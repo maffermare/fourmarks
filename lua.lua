@@ -1,10 +1,15 @@
 /project-root
-|-- index.html
 |-- _redirects
-|-- /css
-|   |-- style.css
+|-- index.html
 |-- /quests
-|   |-- shrine.html
-|   |-- service.html
-|   |-- morality.html
-|   |-- prayer.html
+    |-- shrine.html
+    |-- service.html
+    |-- morality.html
+    |-- prayer.html
+|-- /css
+    |-- style.css
+|-- /js
+    |-- shrine.js
+    |-- service.js
+    |-- morality.js
+    |-- prayer.js
