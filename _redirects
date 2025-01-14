@@ -1,1 +1,5 @@
-/*    /index.html   200
+# Allow all routes in the /quests folder to be served as their own files
+/quests/*    /quests/:splat    200
+
+# Redirect all other routes to index.html for the main adventure page
+/*           /index.html       200
