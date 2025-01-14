@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acts of Service Challenge</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script defer src="../js/service.js"></script>
 </head>
 <body>
     <header>
@@ -19,26 +18,13 @@
         </p>
         <!-- Display for the task -->
         <div id="task-display"></div>
-        
-        <!-- Instructions for writing the story -->
-        <p id="instructions"></p>
 
-        <!-- Story input area -->
-        <label for="story">Write your story here (at least 50 words):</label><br>
-        <textarea id="story" rows="4" cols="50"></textarea><br>
-        
-        <!-- Word count warning -->
-        <p id="word-count-warning" style="color: red; display: none;">Your story must be at least 50 words.</p>
-
-        <!-- Button to generate tasks -->
-        <button id="generate-task">Generate My Challenge</button>
-        <!-- Hidden retry button that shows after first challenge -->
-        <button id="retry-task" style="display: none;">Generate a New Challenge</button>
-        <!-- Submit Button -->
-        <button id="submit-story" style="display: none;">Submit Your Story</button>
+        <!-- Google Form embedded for submissions -->
+        <iframe src="https://docs.google.com/forms/d/e/1wRx6RRYJFAR4atej8xfQe9HmoYWctcAVYLU7YFevpVw/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
         <!-- Link back to main page -->
         <a href="../index.html">Return to Adventure</a>
     </main>
 </body>
 </html>
+
