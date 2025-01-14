@@ -21,18 +21,22 @@ const tasks = [
     "Donate books to a school, library, or community center."
 ];
 
+// Get the elements by their IDs
 const generateButton = document.getElementById("generate-task");
 const taskDisplay = document.getElementById("task-display");
 const retryButton = document.getElementById("retry-task");
 
-// Generate a random challenge
+// Debugging: Log the elements to check if they are correctly referenced
+console.log(generateButton, taskDisplay, retryButton);
+
+// Generate a random challenge when the button is clicked
 generateButton.addEventListener("click", () => {
     const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
     taskDisplay.textContent = `Your challenge: ${randomTask}`;
     retryButton.style.display = "inline-block"; // Show the retry button
 });
 
-// Allow users to retry for a new challenge
+// Retry for a new challenge when the retry button is clicked
 retryButton.addEventListener("click", () => {
     const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
     taskDisplay.textContent = `Your new challenge: ${randomTask}`;
