@@ -21,23 +21,47 @@ const tasks = [
     "Donate books to a school, library, or community center."
 ];
 
-// Get the elements by their IDs
 const generateButton = document.getElementById("generate-task");
 const taskDisplay = document.getElementById("task-display");
 const retryButton = document.getElementById("retry-task");
-
-// Debugging: Log the elements to check if they are correctly referenced
-console.log(generateButton, taskDisplay, retryButton);
+const storyInput = document.getElementById("story");
+const submitButton = document.getElementById("submit-story");
+const wordCountWarning = document.getElementById("word-count-warning");
 
 // Generate a random challenge when the button is clicked
 generateButton.addEventListener("click", () => {
     const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
     taskDisplay.textContent = `Your challenge: ${randomTask}`;
     retryButton.style.display = "inline-block"; // Show the retry button
+    submitButton.style.display = "inline-block"; // Show the submit button
+    document.getElementById("instructions").textContent = "Write a story about how you could complete this task, describing the people involved and how it made a difference.";
 });
 
 // Retry for a new challenge when the retry button is clicked
 retryButton.addEventListener("click", () => {
     const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
     taskDisplay.textContent = `Your new challenge: ${randomTask}`;
+    document.getElementById("instructions").textContent = "Write a story about how you could complete this task, describing the people involved and how it made a difference.";
+});
+
+// Check word count when the user writes their story
+storyInput.addEventListener("input", () => {
+    const storyText = storyInput.value.trim();
+    const wordCount = storyText.split(/\s+/).filter(Boolean).length;
+
+    // Show the warning if the story has fewer than 50 words
+    if (wordCount < 50) {
+        wordCountWarning.style.display = "inline-block";
+        submitButton.disabled = true; // Disable submit button
+    } else {
+        wordCountWarning.style.display = "none";
+        submitButton.disabled = false; // Enable submit button
+    }
+});
+
+// Submit the story when the button is clicked (can add functionality for actual submission)
+submitButton.addEventListener("click", () => {
+    alert("Thank you for submitting your story! Keep up the great work!");
+    // Clear the story input after submission (optional)
+    storyInput.value = "";
 });
